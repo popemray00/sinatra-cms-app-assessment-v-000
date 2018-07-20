@@ -27,7 +27,7 @@ class UserController < ApplicationController
         redirect to '/games'
       else
         flash[:message] = "Username is already taken, please choose another name."
-        redirect to '/login'
+        redirect to '/signup'
       end
       end
     end
