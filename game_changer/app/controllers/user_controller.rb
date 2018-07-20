@@ -10,7 +10,6 @@ class UserController < ApplicationController
 
     get '/signup' do
       if !logged_in?
-          flash[:message] = "Please sign up before you sign in"
         erb :'users/create_user'
       else
         redirect to '/games'
