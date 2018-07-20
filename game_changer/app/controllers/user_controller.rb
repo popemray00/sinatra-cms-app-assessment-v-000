@@ -29,6 +29,7 @@ class UserController < ApplicationController
     end
 
     get '/login' do
+      flash[:message] = "Please sign up before you sign in"
       if !logged_in?
         erb :'users/login'
       else
