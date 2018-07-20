@@ -24,7 +24,6 @@ class UserController < ApplicationController
         flash[:message] = "Username is already taken, please choose another name."
         redirect to '/signup'
       end
-      end
     end
 
     get '/login' do
