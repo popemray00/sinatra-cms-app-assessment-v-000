@@ -30,6 +30,7 @@ class UserController < ApplicationController
 
     get '/login' do
       if !logged_in?
+        flash[:message] = "Please sign up before you sign in"
         erb :'users/login'
       else
         redirect '/games'
