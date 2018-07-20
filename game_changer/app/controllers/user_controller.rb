@@ -26,13 +26,13 @@ class UserController < ApplicationController
         session[:user_id] = @user.id
         redirect to '/games'
       else
+        flash[:message] = "Username is already taken, please choose another name."
         redirect to '/login'
       end
       end
     end
 
     get '/login' do
-      flash[:message] = "Username is already taken, please choose another name."
       if !logged_in?
         erb :'users/login'
       else
