@@ -22,9 +22,12 @@ class UserController < ApplicationController
         redirect to '/signup'
       else
         @user = User.new(:username => params[:username], :password => params[:password])
-        @user.save
+        if @user.save
         session[:user_id] = @user.id
         redirect to '/games'
+      else
+        flash[:message] = "Username is already taken, please choose another name."
+        redirect to '/login'
       end
     end
 
